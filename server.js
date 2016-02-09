@@ -27,7 +27,7 @@ http.createServer( function(req, res) {
     payload = JSON.parse(payload);
     var body = payload.comment.body;
     var commentUrl = payload.comment.html_url;
-    if (body.indexOf(userName)){
+    if (body.indexOf(userName) !== -1 ){
     	//make the flock url call
     	var repoName = payload.repository.name;
     	var userName = payload.comment.user.login;
