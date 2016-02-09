@@ -1,0 +1,12 @@
+{
+	"comment" : {
+		"body" : "test body",
+		"user" : {
+			"login" : "test commenter name"
+		},
+		"html_url" : "http://www.google.com"
+	},
+	"repository" : {
+		"name" : "test name"
+	}
+}

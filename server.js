@@ -1,6 +1,6 @@
 var http = require('http');
 var userName = '@sktguha';
-var flockToken = process.env.FLOCK_TOKEN || (process.argv && process.argv[0]);
+var flockToken = process.env.FLOCK_TOKEN || (process.argv && process.argv[2]);
 var commentUrl = 'http://www.google.com';
 /*sendToFlock({
 			text  : 'your name was mentioned',
@@ -29,15 +29,21 @@ http.createServer( function(req, res) {
     var commentUrl = payload.comment.html_url;
     if (body.indexOf(userName)){
     	//make the flock url call
-    	var repoName = obj.repository.name;
-    	var userName = obj.comment.user.login;
+    	var repoName = payload.repository.name;
+    	var userName = payload.comment.user.login;
+    	var commentSrc = payload.comment.html_url;
     	sendToFlock({
     		text : userName+'('+repoName+') : '+body,
     	});
-    	sendToFlock(content : {
-    			source : payload.comment.html_url,//comment source
+    	sendToFlock({
+    		content : {
     			mime_type: "text/html",
-    			inline: "<a href='"+ commentUrl +"'/>"+ commentUrl+"</a>"
+    			source : commentUrl ,
+    			previews : [{
+    			 	inline: "<a href='"+ commentUrl +"'/>"+ commentUrl+"</a>",
+    			 	mime_type: "text/html"
+    			 }]
+			}
 		});
     }
 	} catch(e){
@@ -49,6 +55,7 @@ http.createServer( function(req, res) {
 
 function sendToFlock(data){
 	var url = 'https://api.flock.co/hooks/sendMessage/'+ flockToken;
+	console.log(url);
 	require('request')({
     uri: url,
     method: "POST",
