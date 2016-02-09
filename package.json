@@ -1,0 +1,24 @@
+{
+  "name": "flock-github-integration",
+  "version": "1.0.0",
+  "description": "flock github integration",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo ''\u001b[Dno test'\u001b[Ds for now'",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sktguha/flock-github-integration.git"
+  },
+  "keywords": [
+    "flock",
+    "github"
+  ],
+  "author": "Saikat GUha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sktguha/flock-github-integration/issues"
+  },
+  "homepage": "https://github.com/sktguha/flock-github-integration#readme"
+}
