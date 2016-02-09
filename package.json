@@ -12,7 +12,7 @@
     "url": "git+https://github.com/sktguha/flock-github-integration.git"
   },
   "engines": {
-  "node": "0.10.x"
+    "node": "0.10.x"
   },
   "keywords": [
     "flock",
@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/sktguha/flock-github-integration/issues"
   },
-  "homepage": "https://github.com/sktguha/flock-github-integration#readme"
+  "homepage": "https://github.com/sktguha/flock-github-integration#readme",
+  "devDependencies": {
+    "request": "^2.69.0"
+  }
 }
