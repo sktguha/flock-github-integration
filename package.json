@@ -11,6 +11,9 @@
     "type": "git",
     "url": "git+https://github.com/sktguha/flock-github-integration.git"
   },
+  "engines": {
+  "node": "0.10.x"
+  },
   "keywords": [
     "flock",
     "github"
